@@ -138,3 +138,11 @@ LOGIN_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = 'login'
+
+# environment variables
+import os
+SECRET_KEY = os.environ['SECRET_KEY']
+
+#or local files
+with open('/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
